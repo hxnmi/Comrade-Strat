@@ -9,7 +9,7 @@ public class PickNDropWeapon : MonoBehaviour
     public BoxCollider coll;
     public Transform player, gunContainer, tppCam;
 
-    public float pickUpRange, pickUpTime;
+    public float pickUpRange;
     public float dropForwardForce, dropUpwardForce;
 
     public bool equipped;
@@ -59,6 +59,7 @@ public class PickNDropWeapon : MonoBehaviour
         rb.isKinematic = true;
         coll.isTrigger = true;
 
+        GetComponent<BulletSpawn>().enabled = true;
         // gunScript.enabled = true;
     }
 
@@ -80,6 +81,7 @@ public class PickNDropWeapon : MonoBehaviour
         float random = Random.Range(-1f, 1f);
         rb.AddTorque(new Vector3(random, random, random) * 10);
 
+        GetComponent<BulletSpawn>().enabled = false;
         // gunScript.enabled = false;
     }
 }
