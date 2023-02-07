@@ -60,8 +60,13 @@ public class PickNDropWeapon : MonoBehaviour
         coll.isTrigger = true;
 
         GetComponent<BulletSpawn>().enabled = true;
-        GameObject.Find("BoxPrototype").GetComponent<PickNDropBox>().enabled = false;
-        // gunScript.enabled = true;
+        foreach(GameObject go in GameObject.FindGameObjectsWithTag("Box"))
+        {
+            if(go.name == "BoxPrototype")
+            {
+                go.GetComponent<PickNDropBox>().enabled = false;
+            }
+        }        // gunScript.enabled = true;
     }
 
     private void Drop()
@@ -83,7 +88,12 @@ public class PickNDropWeapon : MonoBehaviour
         rb.AddTorque(new Vector3(random, random, random) * 10);
 
         GetComponent<BulletSpawn>().enabled = false;
-        GameObject.Find("BoxPrototype").GetComponent<PickNDropBox>().enabled = true;
-        // gunScript.enabled = false;
+        foreach(GameObject go in GameObject.FindGameObjectsWithTag("Box"))
+        {
+            if(go.name == "BoxPrototype")
+            {
+                go.GetComponent<PickNDropBox>().enabled = true;
+            }
+        }        // gunScript.enabled = false;
     }
 }

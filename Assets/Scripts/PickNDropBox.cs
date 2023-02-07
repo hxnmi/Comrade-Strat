@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PickNDropBox : MonoBehaviour
 {
-    // public ProjectileGun gunScript;
     public Rigidbody rb;
     public BoxCollider coll;
     public Transform player, boxContainer, tppCam;
+    public GameObject[] dropArea;
 
     public float pickUpRange;
     public float dropForwardForce, dropUpwardForce;
@@ -56,8 +56,14 @@ public class PickNDropBox : MonoBehaviour
 
         rb.isKinematic = true;
         coll.isTrigger = true;
-
-        GameObject.Find("WeaponPrototype").GetComponent<PickNDropWeapon>().enabled = false;
+    
+        foreach(GameObject go in GameObject.FindGameObjectsWithTag("Weapon"))
+        {
+            if(go.name == "WeaponPrototype")
+            {
+                go.GetComponent<PickNDropWeapon>().enabled = false;
+            }
+        }
     }
 
     private void Drop()
@@ -70,12 +76,48 @@ public class PickNDropBox : MonoBehaviour
         rb.isKinematic = false;
         coll.isTrigger = false;
 
-        rb.AddForce(tppCam.forward * dropForwardForce, ForceMode.Impulse);
-        rb.AddForce(tppCam.up * dropUpwardForce, ForceMode.Impulse);
+        foreach(GameObject dropAr in dropArea)
+        {
+            if(dropAr.GetComponent<DropArea>().isTriggerArea == true)
+            {
+                var rayOrigin = player.transform.position;
+                var rayDirection = dropAr.transform.position - player.transform.position;
+                RaycastHit hitInfo;
+                
+                if(Physics.Raycast(rayOrigin, rayDirection, out hitInfo))
+                {
+                    rb.isKinematic = true;
+                    transform.SetParent(dropAr.transform);
+                    transform.position = dropAr.transform.position;
+                    transform.localRotation = dropAr.transform.localRotation;
+                }
+                transform.GetComponent<Collider>().enabled = true;
+            }
+            else
+            {
+                rb.AddForce(tppCam.forward * dropForwardForce, ForceMode.Impulse);
+                rb.AddForce(tppCam.up * dropUpwardForce, ForceMode.Impulse);
 
-        float random = Random.Range(-1f, 1f);
-        rb.AddTorque(new Vector3(random, random, random) * 10);
-
-        GameObject.Find("WeaponPrototype").GetComponent<PickNDropWeapon>().enabled = true;
+                float random = Random.Range(-1f, 1f);
+                rb.AddTorque(new Vector3(random, random, random) * 10);
+            }
+        }
+    
+        foreach(GameObject go in GameObject.FindGameObjectsWithTag("Weapon"))
+        {
+            if(go.name == "WeaponPrototype")
+            {
+                go.GetComponent<PickNDropWeapon>().enabled = true;
+            }
+        }
     }
+
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if(other.gameObject.CompareTag("DropArea"))
+    //     {
+    //         return true;
+    //     }
+    //     return true;
+    // }
 }
