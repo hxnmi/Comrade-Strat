@@ -7,6 +7,7 @@ public class PickNDropBox : MonoBehaviour
     public Rigidbody rb;
     public BoxCollider coll;
     public Transform player, boxContainer, tppCam;
+    // public List<GameObject> dropArea = new List<GameObject>();
     public GameObject[] dropArea;
 
     public float pickUpRange;
@@ -15,8 +16,18 @@ public class PickNDropBox : MonoBehaviour
     public bool equipped;
     public static bool slotFull;
 
+    Collider colliderBox;
+
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Transform>();
+        boxContainer = GameObject.FindGameObjectWithTag("BoxContainer").GetComponent<Transform>();
+        tppCam = GameObject.FindGameObjectWithTag("BoxHandler").GetComponent<Transform>();
+        // GameObject dropAreas = GameObject.FindGameObjectWithTag("DropArea");
+        // dropArea.Add(dropAreas);
+
+        dropArea = GameObject.FindGameObjectsWithTag("DropArea");
+
         if(!equipped)
         {
             rb.isKinematic = false;
@@ -28,10 +39,12 @@ public class PickNDropBox : MonoBehaviour
             rb.isKinematic = true;
             coll.isTrigger = true;
         }
+
+        colliderBox = GetComponent<Collider>();
     }
 
     private void Update()
-    {
+    {       
         Vector3 distanceToPlayer = player.position - transform.position;
         if(!equipped && distanceToPlayer.magnitude <= pickUpRange && Input.GetKeyDown(KeyCode.E) && !slotFull)
         {
@@ -56,6 +69,7 @@ public class PickNDropBox : MonoBehaviour
 
         rb.isKinematic = true;
         coll.isTrigger = true;
+        colliderBox.enabled = false;
     
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Weapon"))
         {
@@ -75,6 +89,7 @@ public class PickNDropBox : MonoBehaviour
 
         rb.isKinematic = false;
         coll.isTrigger = false;
+        colliderBox.enabled = true;
 
         foreach(GameObject dropAr in dropArea)
         {
@@ -86,7 +101,9 @@ public class PickNDropBox : MonoBehaviour
                 
                 if(Physics.Raycast(rayOrigin, rayDirection, out hitInfo))
                 {
+                    coll.isTrigger = true;
                     rb.isKinematic = true;
+                    colliderBox.enabled = true;
                     transform.SetParent(dropAr.transform);
                     transform.position = dropAr.transform.position;
                     transform.localRotation = dropAr.transform.localRotation;

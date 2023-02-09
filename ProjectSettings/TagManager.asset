@@ -9,6 +9,12 @@ TagManager:
   - Box
   - Bullet
   - DropArea
+  - PlayerBody
+  - WeaponHandler
+  - WeaponContainer
+  - BoxHandler
+  - BoxContainer
+  - BoxV
   layers:
   - Default
   - TransparentFX

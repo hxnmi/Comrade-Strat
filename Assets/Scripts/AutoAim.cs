@@ -45,7 +45,7 @@ public class AutoAim : MonoBehaviour
     public GameObject FindClosestEnemy() 
     {
         float min = 2;
-        float max = 10;
+        float max = 20;
 
         GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject closest = null;

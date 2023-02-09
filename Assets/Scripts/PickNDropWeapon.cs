@@ -17,6 +17,10 @@ public class PickNDropWeapon : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Transform>();
+        gunContainer = GameObject.FindGameObjectWithTag("WeaponContainer").GetComponent<Transform>();
+        tppCam = GameObject.FindGameObjectWithTag("WeaponHandler").GetComponent<Transform>();
+
         if(!equipped)
         {
             // gunScript.enabled = false;
@@ -66,7 +70,8 @@ public class PickNDropWeapon : MonoBehaviour
             {
                 go.GetComponent<PickNDropBox>().enabled = false;
             }
-        }        // gunScript.enabled = true;
+        }        
+        // gunScript.enabled = true;
     }
 
     private void Drop()
@@ -94,6 +99,7 @@ public class PickNDropWeapon : MonoBehaviour
             {
                 go.GetComponent<PickNDropBox>().enabled = true;
             }
-        }        // gunScript.enabled = false;
+        }        
+        // gunScript.enabled = false;
     }
 }
