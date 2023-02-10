@@ -135,6 +135,7 @@ MonoBehaviour:
   tppCam: {fileID: 0}
   dropArea: []
   pickUpRange: 3
+  dropRange: 3
   dropForwardForce: 1
   dropUpwardForce: 1
   equipped: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DropArea : MonoBehaviour
 {
     public bool isTriggerArea;
-
+  
     void OnTriggerStay(Collider col) 
     {
         if(col.gameObject.CompareTag("Player"))

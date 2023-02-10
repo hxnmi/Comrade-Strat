@@ -4,12 +4,36 @@ using UnityEngine;
 
 public class TwoVerticalBox : MonoBehaviour
 {
-    private void OnTriggerStay(Collider other) 
+    public float combineBoxRange;
+    private Transform player;
+
+    // private void OnTriggerStay(Collider other) 
+    // {
+    //     if(Input.GetKeyDown(KeyCode.G) && other.gameObject.CompareTag("Player"))
+    //     {
+
+    //     }
+    // }
+
+    void Start() 
     {
-        if(Input.GetKeyDown(KeyCode.G) && other.gameObject.CompareTag("Player"))
+        player = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Transform>();
+    }
+
+    void Update() 
+    {
+        Vector3 distanceToPlayer = player.position - transform.position;
+        if(distanceToPlayer.magnitude <= combineBoxRange && Input.GetKeyDown(KeyCode.G))
         {
-            Instantiate(Resources.Load("WeaponPrototype"), transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            CombineBoxs();
         }
+    }
+
+    void CombineBoxs()
+    {
+        transform.position = new Vector3(transform.position.x, 1.25f, transform.position.z);
+
+        Instantiate(Resources.Load("WeaponPrototype"), transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

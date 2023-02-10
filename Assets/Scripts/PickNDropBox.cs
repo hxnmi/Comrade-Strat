@@ -7,10 +7,9 @@ public class PickNDropBox : MonoBehaviour
     public Rigidbody rb;
     public BoxCollider coll;
     public Transform player, boxContainer, tppCam;
-    // public List<GameObject> dropArea = new List<GameObject>();
     public GameObject[] dropArea;
 
-    public float pickUpRange;
+    public float pickUpRange, dropRange;
     public float dropForwardForce, dropUpwardForce;
 
     public bool equipped;
@@ -23,9 +22,6 @@ public class PickNDropBox : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Transform>();
         boxContainer = GameObject.FindGameObjectWithTag("BoxContainer").GetComponent<Transform>();
         tppCam = GameObject.FindGameObjectWithTag("BoxHandler").GetComponent<Transform>();
-        // GameObject dropAreas = GameObject.FindGameObjectWithTag("DropArea");
-        // dropArea.Add(dropAreas);
-
         dropArea = GameObject.FindGameObjectsWithTag("DropArea");
 
         if(!equipped)
@@ -128,13 +124,4 @@ public class PickNDropBox : MonoBehaviour
             }
         }
     }
-
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if(other.gameObject.CompareTag("DropArea"))
-    //     {
-    //         return true;
-    //     }
-    //     return true;
-    // }
 }
