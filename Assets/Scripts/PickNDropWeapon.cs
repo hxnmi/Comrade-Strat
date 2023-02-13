@@ -66,10 +66,7 @@ public class PickNDropWeapon : MonoBehaviour
         GetComponent<BulletSpawn>().enabled = true;
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Box"))
         {
-            if(go.name == "BoxPrototype")
-            {
-                go.GetComponent<PickNDropBox>().enabled = false;
-            }
+            go.GetComponent<PickNDropBox>().enabled = false;
         }        
         // gunScript.enabled = true;
     }
@@ -95,10 +92,7 @@ public class PickNDropWeapon : MonoBehaviour
         GetComponent<BulletSpawn>().enabled = false;
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Box"))
         {
-            if(go.name == "BoxPrototype")
-            {
-                go.GetComponent<PickNDropBox>().enabled = true;
-            }
+            go.GetComponent<PickNDropBox>().enabled = true;
         }        
         // gunScript.enabled = false;
     }

@@ -5,18 +5,24 @@ using UnityEngine;
 public class DropArea : MonoBehaviour
 {
     public bool isTriggerArea;
-  
-    void OnTriggerStay(Collider col) 
+    public bool isFill;
+
+    void OnTriggerEnter(Collider col) 
     {
+        if(col.gameObject.CompareTag("Weapon"))
+        {
+            isFill = false;
+        }
+
         if(col.gameObject.CompareTag("Player"))
-        {           
-            if (transform.childCount == 0)
+        {
+            if(transform.childCount == 0 && isFill == false)
             {
                 isTriggerArea = true;
             }
             else
             {
-                isTriggerArea = false;
+                isTriggerArea = false;        
             }
         }
     }

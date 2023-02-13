@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273874508631029817, guid: ccea1a4ab81826149ba8210253fd6201, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 273874508631029817, guid: ccea1a4ab81826149ba8210253fd6201, type: 3}
       propertyPath: m_LocalPosition.x
@@ -377,13 +377,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550579237}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &612629372
 GameObject:
@@ -573,7 +573,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645767452}
-  m_LocalRotation: {x: 0.13505942, y: 8.719026e-16, z: -1.7869098e-17, w: 0.9908375}
+  m_LocalRotation: {x: 0.1350594, y: -0.00000001476463, z: 0.0000000020125421, w: 0.9908375}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -861,7 +861,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727808133}
-  m_LocalRotation: {x: 0.09897817, y: -0.000000008560945, z: 8.515279e-10, w: 0.99508965}
+  m_LocalRotation: {x: 0.09897817, y: 0.000000008560947, z: -8.5152807e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1247,7 +1247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273874508631029817, guid: ccea1a4ab81826149ba8210253fd6201, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 273874508631029817, guid: ccea1a4ab81826149ba8210253fd6201, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1371,7 +1371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273874508631029817, guid: ccea1a4ab81826149ba8210253fd6201, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 273874508631029817, guid: ccea1a4ab81826149ba8210253fd6201, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1818,9 +1818,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5519994652231138249, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5519994652231138251, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
       propertyPath: m_Name
       value: BoxPrototype
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519994652231138252, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5519994652231138253, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
       propertyPath: dropRange
@@ -1828,11 +1836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5519994652231138255, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5519994652231138255, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5519994652231138255, guid: 1a73c500ae8811544888a820f3d3722f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1905,7 +1913,7 @@ Transform:
   - {fileID: 1737270202409168000}
   - {fileID: 1737270200957600797}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1451966256931096260
 Transform:
@@ -1935,6 +1943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
 --- !u!1 &1451966256931096263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,9 +1954,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1451966256931096260}
   - component: {fileID: 1451966256931096314}
+  - component: {fileID: 1451966256931096315}
   - component: {fileID: 1451966256931096261}
   m_Layer: 10
-  m_Name: DropAreaContainer2
+  m_Name: DropAreaContainer
   m_TagString: DropArea
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1966,6 +1976,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 20, z: 1.3}
   m_Center: {x: -0.15, y: -5, z: -0.15}
+--- !u!54 &1451966256931096315
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451966256931096263}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1737270200957600797
 Transform:
   m_ObjectHideFlags: 0
@@ -2234,6 +2260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
 --- !u!65 &2937016910428591713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2259,7 +2286,7 @@ GameObject:
   - component: {fileID: 2937016910428591713}
   - component: {fileID: 2937016910428591712}
   m_Layer: 10
-  m_Name: DropAreaContainer5
+  m_Name: DropAreaContainer
   m_TagString: DropArea
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2392,7 +2419,7 @@ GameObject:
   - component: {fileID: 6578587417418803064}
   - component: {fileID: 6578587417418803065}
   m_Layer: 10
-  m_Name: DropAreaContainer4
+  m_Name: DropAreaContainer
   m_TagString: DropArea
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2424,6 +2451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
 --- !u!65 &7282280389133596560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2450,6 +2478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
 --- !u!4 &7282280389133596562
 Transform:
   m_ObjectHideFlags: 0
@@ -2477,7 +2506,7 @@ GameObject:
   - component: {fileID: 7282280389133596560}
   - component: {fileID: 7282280389133596561}
   m_Layer: 10
-  m_Name: DropAreaContainer3
+  m_Name: DropAreaContainer
   m_TagString: DropArea
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2511,6 +2540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
 --- !u!65 &7408811307389276138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2536,7 +2566,7 @@ GameObject:
   - component: {fileID: 7408811307389276138}
   - component: {fileID: 7408811307389276137}
   m_Layer: 10
-  m_Name: DropAreaContainer8
+  m_Name: DropAreaContainer
   m_TagString: DropArea
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2568,6 +2598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
 --- !u!4 &7490215848829119034
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,14 +2624,31 @@ GameObject:
   m_Component:
   - component: {fileID: 7490215848829119034}
   - component: {fileID: 7490215848829119032}
+  - component: {fileID: 7490215848829119036}
   - component: {fileID: 7490215848829119033}
   m_Layer: 10
-  m_Name: DropAreaContainer1
+  m_Name: DropAreaContainer
   m_TagString: DropArea
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &7490215848829119036
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490215848829119035}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &7504841885810683664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2626,7 +2674,7 @@ GameObject:
   - component: {fileID: 7504841885810683664}
   - component: {fileID: 7504841885810683671}
   m_Layer: 10
-  m_Name: DropAreaContainer6
+  m_Name: DropAreaContainer
   m_TagString: DropArea
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2660,6 +2708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0
 --- !u!4 &7546002933514441184
 Transform:
   m_ObjectHideFlags: 0
@@ -2687,7 +2736,7 @@ GameObject:
   - component: {fileID: 7546002933514441186}
   - component: {fileID: 7546002933514441187}
   m_Layer: 10
-  m_Name: DropAreaContainer7
+  m_Name: DropAreaContainer
   m_TagString: DropArea
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2719,3 +2768,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerArea: 0
+  isFill: 0

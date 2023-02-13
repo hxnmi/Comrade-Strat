@@ -23,6 +23,7 @@ public class PickNDropBox : MonoBehaviour
         boxContainer = GameObject.FindGameObjectWithTag("BoxContainer").GetComponent<Transform>();
         tppCam = GameObject.FindGameObjectWithTag("BoxHandler").GetComponent<Transform>();
         dropArea = GameObject.FindGameObjectsWithTag("DropArea");
+        colliderBox = GetComponent<Collider>();
 
         if(!equipped)
         {
@@ -35,8 +36,6 @@ public class PickNDropBox : MonoBehaviour
             rb.isKinematic = true;
             coll.isTrigger = true;
         }
-
-        colliderBox = GetComponent<Collider>();
     }
 
     private void Update()
@@ -69,10 +68,7 @@ public class PickNDropBox : MonoBehaviour
     
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Weapon"))
         {
-            if(go.name == "WeaponPrototype")
-            {
-                go.GetComponent<PickNDropWeapon>().enabled = false;
-            }
+            go.GetComponent<PickNDropWeapon>().enabled = false;
         }
     }
 
@@ -99,7 +95,8 @@ public class PickNDropBox : MonoBehaviour
                 {
                     coll.isTrigger = true;
                     rb.isKinematic = true;
-                    colliderBox.enabled = true;
+                    dropAr.GetComponent<DropArea>().isFill = true;
+
                     transform.SetParent(dropAr.transform);
                     transform.position = dropAr.transform.position;
                     transform.localRotation = dropAr.transform.localRotation;
@@ -118,10 +115,7 @@ public class PickNDropBox : MonoBehaviour
     
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Weapon"))
         {
-            if(go.name == "WeaponPrototype")
-            {
-                go.GetComponent<PickNDropWeapon>().enabled = true;
-            }
+            go.GetComponent<PickNDropWeapon>().enabled = true;
         }
     }
 }

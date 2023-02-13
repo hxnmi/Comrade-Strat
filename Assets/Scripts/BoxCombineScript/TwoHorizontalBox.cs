@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoVerticalBox : MonoBehaviour
+public class TwoHorizontalBox : MonoBehaviour
 {
     public float combineBoxRange;
     private Transform player;
@@ -33,17 +33,17 @@ public class TwoVerticalBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.gameObject.CompareTag("BoxV"))
+        if(other.gameObject.CompareTag("BoxHX"))
         {
-            if(ID < other.gameObject.GetComponent<TwoVerticalBox>().ID)
+            if(ID < other.gameObject.GetComponent<TwoHorizontalBox>().ID)
             {
                 return;
             }
-            transform.position = new Vector3(8f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-            Instantiate(Resources.Load("BoxCombination/BoxUpX"), transform.position, Quaternion.identity);
+            Instantiate(Resources.Load("BoxCombination/BoxDown"), transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-    }
+    }    
 }
