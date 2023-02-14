@@ -95,7 +95,6 @@ public class PickNDropBox : MonoBehaviour
                 {
                     coll.isTrigger = true;
                     rb.isKinematic = true;
-                    dropAr.GetComponent<DropArea>().isFill = true;
 
                     transform.SetParent(dropAr.transform);
                     transform.position = dropAr.transform.position;

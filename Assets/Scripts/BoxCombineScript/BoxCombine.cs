@@ -34,10 +34,8 @@ public class BoxCombine : MonoBehaviour
                     return;
                 }
                 transform.position = new Vector3(transform.position.x, transform.position.y, 2f);
-                Vector3 Rot = new Vector3(0, 90, 0);
-                Quaternion newRotation = Quaternion.Euler(Rot);
 
-                Instantiate(Resources.Load("BoxCombination/BoxHorizontalZ"), transform.position, newRotation);
+                Instantiate(Resources.Load("BoxCombination/BoxHorizontalZ"), transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
                 Destroy(gameObject);
             }

@@ -19,6 +19,8 @@ TagManager:
   - BoxHZ
   - BoxUX
   - BoxUZ
+  - BoxD
+  - BoxFull
   layers:
   - Default
   - TransparentFX

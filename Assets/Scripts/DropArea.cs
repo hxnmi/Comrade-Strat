@@ -14,6 +14,11 @@ public class DropArea : MonoBehaviour
             isFill = false;
         }
 
+        if(transform.childCount == 1)
+        {
+            isFill = true;
+        }
+
         if(col.gameObject.CompareTag("Player"))
         {
             if(transform.childCount == 0 && isFill == false)

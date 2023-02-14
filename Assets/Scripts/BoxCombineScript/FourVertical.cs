@@ -39,11 +39,23 @@ public class FourVertical : MonoBehaviour
             {
                 return;
             }
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(8f, transform.position.y, transform.position.z);
 
             Instantiate(Resources.Load("BoxCombination/BoxFull"), transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
+        // else if(other.gameObject.CompareTag("BoxUZ"))
+        // {
+        //     if(ID < other.gameObject.GetComponent<FourVertical>().ID)
+        //     {
+        //         return;
+        //     }
+        //     transform.position = new Vector3(8f, transform.position.y, transform.position.z);
+
+        //     Instantiate(Resources.Load("BoxCombination/BoxFull"), transform.position, Quaternion.identity);
+        //     Destroy(other.gameObject);
+        //     Destroy(gameObject);
+        // }
     }    
 }
